@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1><%= title %></h1>
+            <p><%= subtitle %></p>
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="/images/default.webp"
+                alt="Model View Controller Architecture Diagram"
+            />
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>It works!</h2>
+
+            <p>
+                This page is rendered using <strong>EJS</strong>.
+            </p>
+
+            <ul>
+                <li>Route: <code>/</code></li>
+                <li>View: <code>views/index.ejs</code></li>
+                <li>Rendered by Express</li>
+            </ul>
+
+            <a class="button secondary" href="/page.html">
+                View Static HTML Example →
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Node + Express MVC Starter</p>
+    </footer>
+
+</body>
+</html>

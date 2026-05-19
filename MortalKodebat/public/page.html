@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Static MVC Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Static HTML Page</h1>
+            <p>Served directly from the /public directory</p>
+        </div>
+
+        <div class="hero-image">
+            <img src="/images/default.webp" alt="MVC Architecture Diagram" />
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Static Content</h2>
+
+            <p>
+                This page is <strong>not rendered by Express</strong>.
+            </p>
+
+            <ul>
+                <li>File: <code>public/index.html</code></li>
+                <li>No route handler</li>
+                <li>No template engine</li>
+            </ul>
+
+            <a class="button secondary" href="/">
+                ← Back to EJS Page
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        Node + Express MVC Starter
+    </footer>
+
+</body>
+</html>
