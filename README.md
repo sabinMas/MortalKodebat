@@ -1,4 +1,4 @@
-# Project MK
+# Oikodomos
 
 **Developer Tools Marketplace / Extension Discovery Platform**
 Web Frameworks Capstone Project
@@ -7,7 +7,7 @@ Web Frameworks Capstone Project
 
 ## Project Overview
 
-Project MK is a web application that helps developers discover, browse, 
+Oikodomos is a web application that helps developers discover, browse, 
 and organize useful extensions and tools in a unified location. The platform
 brings together extensions from multiple developer ecosystems such as, VSCode, 
 JetBrains, Unreal, Unity, Browser, AI Agents, etc... The purpose of this project 
