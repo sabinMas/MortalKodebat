@@ -3,7 +3,7 @@
 **Developer Tools Marketplace / Extension Discovery Platform**
 Web Frameworks Capstone Project
 
--------------------------------------------------------------------------------
+---
 
 ## Project Overview
 
@@ -23,7 +23,6 @@ is to demonstrate full-stack web application architecher using:
 This project serves as a portfolio-ready example of structured, maintainable, 
 web application, development.
 
------------------------------------------------------------------------------
-
+---
 
 
