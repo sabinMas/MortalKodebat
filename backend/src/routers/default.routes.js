@@ -9,4 +9,8 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/api/oikodomos", (req, res) => {
+    res.render("main");
+});
+
 export default router;
