@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app/src/server.js",
   "scripts": {
-    "dev": "nodemon --env-file=.env src/server.js",
+    "dev": "nodemon --env-file=.env app/src/server.js",
     "lint": "eslint .",
     "test": "echo \"No tests yet\" && exit 0"
   },
