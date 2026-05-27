@@ -6,7 +6,7 @@ const app = express();
 
 //view engine
 app.set("view engine", "ejs");
-app.set("views", "public/views/main.ejs");
+app.set("views", "public/views");
 
 //static directories
 app.use(express.static('public'));
@@ -15,7 +15,10 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
 //routers
 app.use("/", defaultRouter);
+
+
 
 export default app;
