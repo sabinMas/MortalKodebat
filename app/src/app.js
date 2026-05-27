@@ -15,7 +15,10 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
 //routers
 app.use("/", defaultRouter);
+
+
 
 export default app;
