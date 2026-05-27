@@ -9,7 +9,7 @@ app.set("view engine", "ejs");
 app.set("views", "app/public/views");
 
 //static directories
-app.use(express.static('public'));
+app.use(express.static('app/public'));
 
 //middleware
 app.use(express.json());
