@@ -6,7 +6,7 @@ const app = express();
 
 //view engine
 app.set("view engine", "ejs");
-app.set("views", "src/views");
+app.set("views", "public/views");
 
 //static directories
 app.use(express.static('public'));
