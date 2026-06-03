@@ -1,5 +1,5 @@
 import express from 'express';
-import defaultRouter from './routers/default.routes.js';
+import defaultRouter from './src/routers/default.routes.js';
 
 //configure Express.js app
 const app = express();

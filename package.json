@@ -4,7 +4,7 @@
   "description": "",
   "main": "app/src/server.js",
   "scripts": {
-    "dev": "nodemon --env-file=.env app/src/server.js",
+    "dev": "nodemon --env-file=.env app/server.js",
     "lint": "eslint .",
     "test": "echo \"No tests yet\" && exit 0"
   },
