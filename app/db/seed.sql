@@ -1,5 +1,5 @@
 INSERT INTO dev_tools
-    (name, price, description, category, img_path, url, environment)
+    (name, price, description, category, url, environment)
 VALUES
 -- 1. ESLint
 ('ESLint',
