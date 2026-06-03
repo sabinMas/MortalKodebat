@@ -5,7 +5,8 @@ import {
 } from "../model/product.repo.js";
 
 export async function fetchAllProducts() {
-  return await getAllProducts();
+  const rows = await getAllProducts();
+  return rows || [];
 }
 
 export async function fetchProductById(id) {
@@ -37,5 +38,6 @@ export async function fetchFilteredProducts(query) {
     sort: query.sort || null,
   };
 
-  return await getFilteredProducts(filters);
+  const rows = await getFilteredProducts(filters);
+  return rows || [];
 }

@@ -27,18 +27,18 @@
         <section id = "products" class="grid-wrapper">
             <!-- <h2>Products</h2> -->
             <div class = "cards">
-                <article>
-                    <h3>Example 1</h3>
-                    <p>Description</p>
-                </article>
-                <article>
-                    <h3>Example 2</h3>
-                    <p>Description</p>
-                </article>
-                <article>
-                    <h3>Example 3</h3>
-                    <p>Description</p>
-                </article>
+                <% if (typeof featured !== 'undefined' && featured && featured.length > 3) { %>
+                    <% featured.forEach(item => { %>
+                        <article>
+                            <h3><%= item.name %></h3>
+                            <p><%= item.description %></p>
+                            <a href="#">View Details</a>
+                        </article>
+                   <% }) %>
+                   <% } else { %>
+                        <p>No featured extensions are available</p>
+                  <%  } %>
+                    
             </div>
         </section>
     </main>
