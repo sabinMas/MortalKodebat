@@ -1,4 +1,3 @@
-
 USE oikodomos_db;
 
 INSERT INTO dev_tools 
