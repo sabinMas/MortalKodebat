@@ -33,3 +33,18 @@ export async function getProductsPage(req, res) {
         res.status(500).send("Server Error");
     }
 }
+
+export async function getProductDetailPage(req, res) {
+    try {
+        const { id } = req.params;
+        const product = await fetchProductById();
+
+        res.render("product-detail", {
+            product,
+            title: product.name
+        });
+    } catch (error) {
+        console.error("Error loading product details page:", error);
+        res.status(500).send("Server Error");
+    }
+}
