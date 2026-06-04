@@ -25,10 +25,58 @@
 
     <main class = "products-page">
         <section id = "products" class="grid-wrapper">
-            <!-- <h2>Products</h2> -->
+            <div class = "filter-bar">
+                <form class = "filter-bar" method="GET" action="/products">
+                <label>
+                    Search
+                    <input type="text" id="searchInput" placeholder="Search name or description">
+                </label>
+                <label>Category
+                    <select id="categoryFilter" name="category">
+                        <option value = "">All</option>
+                        <option value = "Quality Assurance">Quality Assurance</option>
+                        <option value = "Themes">Themes</option>
+                        <option value = "Productivity">Productivity</option>
+                        <option value = "Version Control">Version Control</option>
+                        <option value = "Testing">Testing</option>
+                        <option value = "Game Development">Game Development</option>
+                    </select>
+                </label>
+                <label>environment
+                    <select id="environmentFilter" name="environment">
+                        <option value = "">All</option>
+                        <option value = "Postman">Postman</option>
+                        <option value = "VSCode">VSCode</option>
+                        <option value = "Godot">Godot</option>
+                        <option value = "JetBrains">Version Control</option>
+                        <option value = "Unreal Engine">Unreal Engine</option>
+                        
+                    </select>
+                </label>
+                <label>minimum Price
+                        <input type = "number"id="minPriceFilter" name="minPrice">   
+                </label>
+                <label>maximum Price
+                        <input type = "number"id="maxPriceFilter" name="maxPrice">
+                </label>
+                <label>sort
+                    <select id="sortFilter" name="sort">
+                        <option value = "">Featured</option>
+                        <option value = "price_asc">Price: Low to High</option>
+                        <option value = "price_desc">Price: High to Low</option>
+                        <option value = "name_asc">Name: A-Z</option>
+                        
+                    </select>
+                </label>
+                <button type = "button" id=""clearFilters>Clear</button>
+                <button type = "submit">Apply</button>
+                </form>
+            </div>
+             <h2>Products</h2> 
+
             <div class = "cards">
-                <% if (typeof featured !== 'undefined' && featured && featured.length > 3) { %>
-                    <% featured.forEach(product => { %>
+                <% if (typeof products !== 'undefined' && products.length > 0) { %>
+                    <% products.forEach(product => { %>
                         <article>
                             <h3><%= product.name %></h3>
                             <p><%= product.description %></p>
@@ -37,7 +85,7 @@
                         </article>
                    <% }) %>
                    <% } else { %>
-                        <p>No featured extensions are available</p>
+                        <p>No extensions are available</p>
                   <%  } %>
                     
             </div>

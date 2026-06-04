@@ -22,16 +22,42 @@ export async function getHomePage(req, res) {
 }
 
 export async function getProductsPage(req, res) {
-    try{
-        const products = await fetchAllProducts();
+    try {
+        let products = await fetchAllProducts();
+        const hasFilters = 
+        req.query.category ||
+        req.query.environment ||
+        req.query.sort ||
+        req.query.search;
+
+        
+        
+
+        if (hasFilters) {
+            products = await fetchFilteredProducts(req.query);
+
+        } else {
+            products = await fetchAllProducts();
+        }
+
         res.render("products", {
-            products,
-            title: "Products Page"
+            title: "products page", products
         });
+
     } catch (err) {
-        console.error("Error loading products page:", err);
+        console.error("error loading products page:", err);
         res.status(500).send("Server Error");
     }
+    // try{
+    //     const products = await fetchAllProducts();
+    //     res.render("products", {
+    //         products,
+    //         title: "Products Page"
+    //     });
+    // } catch (err) {
+    //     console.error("Error loading products page:", err);
+    //     res.status(500).send("Server Error");
+    // }
 }
 
 export async function getProductDetailPage(req, res) {
