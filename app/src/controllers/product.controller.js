@@ -29,7 +29,7 @@ export async function getProductsPage(req, res) {
             title: "Products Page"
         });
     } catch (err) {
-        console.error("Error loading products page:", error);
+        console.error("Error loading products page:", err);
         res.status(500).send("Server Error");
     }
 }
@@ -37,14 +37,28 @@ export async function getProductsPage(req, res) {
 export async function getProductDetailPage(req, res) {
     try {
         const { id } = req.params;
-        const product = await fetchProductById();
+        const product = await fetchProductById(id);
+
+        if (!product) {
+            return res.status(404).render("404", {title: "Extension Not found"});
+        }
 
         res.render("product-detail", {
             product,
             title: product.name
         });
-    } catch (error) {
-        console.error("Error loading product details page:", error);
+    } catch (err) {
+        console.error("Error loading product details page:", err);
         res.status(500).send("Server Error");
+    }
+}
+
+export async function getFilteredProducts(req, res) {
+    try {
+        const filteredProducts = await fetchFilteredProducts(req.query);
+        res.status(200).json(filteredProducts);
+    } catch (err) {
+        console.error("Error filtering the prodcts:", err);
+        res.status(500).json({error: " Failed to retrieve filtered records"})
     }
 }
