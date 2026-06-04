@@ -20,3 +20,16 @@ export async function getHomePage(req, res) {
         res.status(500).send("Server Error");
     }
 }
+
+export async function getProductsPage(req, res) {
+    try{
+        const products = await fetchAllProducts();
+        res.render("products", {
+            products,
+            title: "Products Page"
+        });
+    } catch (err) {
+        console.error("Error loading products page:", error);
+        res.status(500).send("Server Error");
+    }
+}
