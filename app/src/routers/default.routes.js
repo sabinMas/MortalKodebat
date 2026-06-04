@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getHomePage } from "../controllers/product.controller.js";
+import { getHomePage, getProductsPage, getProductDetailPage, getFilteredProducts } from "../controllers/product.controller.js";
 
 const router = Router();
 
@@ -15,5 +15,7 @@ const router = Router();
 // });
 
 router.get("/", getHomePage);
-
+router.get("/products", getProductsPage);
+router.get("/products/:id", getProductDetailPage);
+router.get("/api/products", getFilteredProducts);
 export default router;
