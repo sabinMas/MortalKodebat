@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>All Products</title>
+    <link rel = "stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <h1><a href="#">Oikodomos</a></h1>
+            <ul>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#products">Products</a></li>
+            </ul>
+        </nav>
+        <section class = "hero grid-wrapper">
+            <h2>Build Better With Oikodomos</h2>
+            <p>One place, all the extensions you need</p>
+        </section>
+    </header>
+
+    <main class = "products-page">
+        <section id = "products" class="grid-wrapper">
+            <div class = "filter-bar">
+                <form class = "filter-bar" method="GET" action="/products">
+                <label>
+                    Search
+                    <input type="text" id="searchInput" placeholder="Search name or description">
+                </label>
+                <label>Category
+                    <select id="categoryFilter" name="category">
+                        <option value = "">All</option>
+                        <option value = "Quality Assurance">Quality Assurance</option>
+                        <option value = "Themes">Themes</option>
+                        <option value = "Productivity">Productivity</option>
+                        <option value = "Version Control">Version Control</option>
+                        <option value = "Testing">Testing</option>
+                        <option value = "Game Development">Game Development</option>
+                    </select>
+                </label>
+                <label>environment
+                    <select id="environmentFilter" name="environment">
+                        <option value = "">All</option>
+                        <option value = "Postman">Postman</option>
+                        <option value = "VSCode">VSCode</option>
+                        <option value = "Godot">Godot</option>
+                        <option value = "JetBrains">Version Control</option>
+                        <option value = "Unreal Engine">Unreal Engine</option>
+                        
+                    </select>
+                </label>
+                <label>minimum Price
+                        <input type = "number"id="minPriceFilter" name="minPrice">   
+                </label>
+                <label>maximum Price
+                        <input type = "number"id="maxPriceFilter" name="maxPrice">
+                </label>
+                <label>sort
+                    <select id="sortFilter" name="sort">
+                        <option value = "">Featured</option>
+                        <option value = "price_asc">Price: Low to High</option>
+                        <option value = "price_desc">Price: High to Low</option>
+                        <option value = "name_asc">Name: A-Z</option>
+                        
+                    </select>
+                </label>
+                <button type = "button" id=""clearFilters>Clear</button>
+                <button type = "submit">Apply</button>
+                </form>
+            </div>
+             <h2>Products</h2> 
+
+            <div class = "cards">
+                <% if (typeof products !== 'undefined' && products.length > 0) { %>
+                    <% products.forEach(product => { %>
+                        <article>
+                            <h3><%= product.name %></h3>
+                            <p><%= product.description %></p>
+                            <a href ="/products/<%= product.product_id %>">View Details</a>
+                            <!--<a href="#">View Details</a>-->
+                        </article>
+                   <% }) %>
+                   <% } else { %>
+                        <p>No extensions are available</p>
+                  <%  } %>
+                    
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Oikodomos</p>
+    </footer>
+    
+</body>
+</html>
