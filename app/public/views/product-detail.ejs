@@ -5,16 +5,17 @@
     <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
     <title>Oikodomos</title>
     <link rel = "stylesheet" href="/styles/main.css">
+    <link rel = "stylesheet" href="/styles/product-detail.css">
 </head>
 
 <body>
     <header>
         <nav class="nav">
-            <h1><a href="#">Oikodomos</a></h1>
+            <h1><a href="/">Oikodomos</a></h1>
             <ul>
                 <li><a href="#login">Login</a></li>
                 <li><a href="#register">Register</a></li>
-                <li><a href="#products">Products</a></li>
+                <li><a href="/products">Products</a></li>
             </ul>
         </nav>
     </header>
@@ -27,11 +28,12 @@
                 <% if (product) { %>
                     <%   %>
                         <article>
-                            <h3><%= product.name %></h3>
-                            <p><%= product.price %></p>
-                            <p><%= product.description %></p>
-                            <p><%= product.category %></p>
-                            <a href="/products">Back to products</a>
+                            <h3 class="product-name"><%= product.name %></h3>
+                            <p class="product-cat"><%= product.category %></p>
+                            <p class="product-env"><%= product.environment %></p>
+                            <p class="product-price"><%= product.price %></p>
+                            <p class="product-desc"><%= product.description %></p>
+                            <a href="<%= product.url %>" class="product-link"">Go to <%= product.name %></a>
                         </article>
 
                    <%  %>
