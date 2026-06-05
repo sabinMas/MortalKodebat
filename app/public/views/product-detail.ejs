@@ -14,30 +14,31 @@
             <ul>
                 <li><a href="#login">Login</a></li>
                 <li><a href="#register">Register</a></li>
-                <li><a href="/products#">Products</a></li>
+                <li><a href="#products">Products</a></li>
             </ul>
         </nav>
-        <section class = "hero grid-wrapper">
-            <h2>Build Better With Oikodomos</h2>
-            <p>One place, all the extensions you need</p>
-        </section>
     </header>
 
     <main>
         <section id = "products" class="grid-wrapper">
             <!-- <h2>Products</h2> -->
-            <div class = "cards">
-                <% if (typeof featured !== 'undefined' && featured && featured.length > 2) { %>
-                    <% featured.forEach(item => { %>
+            <div class = "card">
+               <!--product_id, name, price, description, category, url, environment--> 
+                <% if (product) { %>
+                    <%   %>
                         <article>
-                            <h3><%= item.name %></h3>
-                            <p><%= item.description %></p>
-                            <a href="#">View Details</a>
+                            <h3><%= product.name %></h3>
+                            <p><%= product.price %></p>
+                            <p><%= product.description %></p>
+                            <p><%= product.category %></p>
+                            <a href="/products">Back to products</a>
                         </article>
-                   <% }) %>
+
+                   <%  %>
                    <% } else { %>
-                        <p>No featured extensions are available</p>
+                        <p>Extension not available</p>
                   <%  } %>
+
                     
             </div>
         </section>
