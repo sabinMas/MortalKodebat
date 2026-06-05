@@ -93,6 +93,8 @@
     font-weight: bold;
 
     transition: 0.2;
+
+    text-decoration: none;
 }
 
 .details-button:hover {
