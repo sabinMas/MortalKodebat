@@ -1,5 +1,7 @@
 import express from 'express';
+import session from 'express-session'
 import defaultRouter from './src/routers/default.routes.js';
+import authRouter from './src/routers/auth.routes.js';
 
 //configure Express.js app
 const app = express();
@@ -18,9 +20,16 @@ app.set("views", "app/public/views");
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'dev-secret',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false }
+}));
 
 //routers
 app.use("/", defaultRouter);
+app.use("/", authRouter);
 
 //static directories
 app.use(express.static('app/public'));

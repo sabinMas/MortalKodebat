@@ -162,3 +162,6 @@ VALUES
  'AI Tools',
  'https://aws.amazon.com/q/developer/',
  'VSCode');
+
+ INSERT INTO users (name, email, password_hash) VALUES
+('Test User', 'test@test.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhy8');
