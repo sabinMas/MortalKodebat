@@ -27,6 +27,12 @@ app.use(session({
     cookie: { secure: false }
 }));
 
+app.use((req, res, next) => {
+    res.locals.userId = req.session.userId || null;
+    res.locals.name = req.session.name || null;
+    next();
+});
+
 //routers
 app.use("/", defaultRouter);
 app.use("/", authRouter);

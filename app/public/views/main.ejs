@@ -1,52 +1,63 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
+
 <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-    <title>Oikodomos</title>
-    <link rel = "stylesheet" href="/styles/main.css">
-    <link rel = "stylesheet" href="/styles/products.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+  <title>Oikodomos</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/products.css">
 </head>
 
 <body>
-    <header>
-        <nav class="nav">
-            <h1><a href="/">Oikodomos</a></h1>
-            <ul>
-                <li><a href="#login">Login</a></li>
-                <li><a href="#register">Register</a></li>
-                <li><a href="/products#">Products</a></li>
-            </ul>
-        </nav>
-        <section class = "hero grid-wrapper">
-            <h2>Build Better With Oikodomos</h2>
-            <p>One place, all the extensions you need</p>
-        </section>
-    </header>
+  <header>
+    <nav class="nav">
+      <h1><a href="/">Oikodomos</a></h1>
+      <ul>
+        <% if (locals.userId) { %>
+        <li><span>Hi, <%= locals.name %></span></li>
+        <li>
+          <form method="POST" action="/logout" style="display:inline">
+            <button type="submit">Logout</button>
+          </form>
+        </li>
+        <% } else { %>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+        <% } %>
+        <li><a href="/products#">Products</a></li>
+      </ul>
+    </nav>
+    <section class="hero grid-wrapper">
+      <h2>Build Better With Oikodomos</h2>
+      <p>One place, all the extensions you need</p>
+    </section>
+  </header>
 
-    <main>
-        <section id = "products" class="grid-wrapper">
-            <!-- <h2>Products</h2> -->
-            <div class = "cards">
-                <% if (typeof featured !== 'undefined' && featured && featured.length > 2) { %>
-                    <% featured.forEach(item => { %>
-                        <article class = "product-card">
-                            <h3><%= item.name %></h3>
-                            <p class = "product-description"><%= item.description %></p>
-                            <a class = "details-button" href="/products/<%= item.product_id%>">View Details</a>
-                        </article>
-                   <% }) %>
-                   <% } else { %>
-                        <p>No featured extensions are available</p>
-                  <%  } %>
-                    
-            </div>
-        </section>
-    </main>
+  <main>
+    <section id="products" class="grid-wrapper">
+      <!-- <h2>Products</h2> -->
+      <div class="cards">
+        <% if (typeof featured !== 'undefined' && featured && featured.length > 2) { %>
+        <% featured.forEach(item => { %>
+        <article class="product-card">
+          <h3><%= item.name %></h3>
+          <p class="product-description"><%= item.description %></p>
+          <a class="details-button" href="/products/<%= item.product_id%>">View Details</a>
+        </article>
+        <% }) %>
+        <% } else { %>
+        <p>No featured extensions are available</p>
+        <%  } %>
 
-    <footer>
-        <p>&copy; 2026 Oikodomos</p>
-    </footer>
-    
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Oikodomos</p>
+  </footer>
+
 </body>
+
 </html>
