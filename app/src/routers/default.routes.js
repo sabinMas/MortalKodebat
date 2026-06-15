@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { getHomePage, getProductsPage, getProductDetailPage, getFilteredProducts } from "../controllers/product.controller.js";
+import { requireAuth } from "../utility/auth.middleware.js";
 
 const router = Router();
 
@@ -15,7 +16,7 @@ const router = Router();
 // });
 
 router.get("/", getHomePage);
-router.get("/products", getProductsPage);
-router.get("/products/:id", getProductDetailPage);
-router.get("/api/products", getFilteredProducts);
+router.get("/products", requireAuth, getProductsPage);
+router.get("/products/:id", requireAuth, getProductDetailPage);
+router.get("/api/products", requireAuth, getFilteredProducts);
 export default router;
