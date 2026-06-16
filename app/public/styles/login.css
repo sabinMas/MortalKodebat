@@ -1,18 +1,23 @@
 body {
-    font-family: 'Inter', sans-serif;
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .grid-wrapper {
-    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    margin: auto;
     padding: 1rem 2rem;
-    max-width: 500px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    max-width: 400px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
     text-align: center;
+    margin-bottom: .6rem;
 }
 
 form {
@@ -22,10 +27,16 @@ form {
     border-radius: 6px;
 }
 
+label {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
 input {
     padding: .4rem;
-    border: 1px solid #ccc;
+    border: 1px solid #d1d5db;
     border-radius: 6px;
+    font-size: .9rem;
 }
 
 button {
@@ -35,8 +46,26 @@ button {
     color: white;
     border-radius: 6px;
     border: 1px solid #ddd;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: bold;
 }
 
-p {
+button:hover {
+    cursor: pointer;
+}
+
+.grid-wrapper p {
     margin-top: 1rem;
+    text-align: center;
+}
+
+.grid-wrapper a {
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.grid-wrapper a:hover {
+    transform: scale(1.05);
 }
