@@ -1,0 +1,42 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.grid-wrapper {
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    max-width: 500px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 6px;
+}
+
+input {
+    padding: .4rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    margin-top: .5rem;
+    padding: 10px;
+    background-color: purple;
+    color: white;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+p {
+    margin-top: 1rem;
+}
