@@ -17,6 +17,24 @@
     list-style: none;
 }
 
+/* .nav-user {
+    color: purple;
+} */
+
+.nav-logout button{
+    border-radius: 999px;
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: purple;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-logout button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
 .nav a {
     display: inline-block;
     text-decoration: none;
