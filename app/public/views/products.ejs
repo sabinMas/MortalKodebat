@@ -16,6 +16,7 @@
                 <li><a href="#login">Login</a></li>
                 <li><a href="#register">Register</a></li>
                 <li><a href="/products">Products</a></li>
+                <li><a href="/favorites">Favorites</a></li>
             </ul>
         </nav>
     </header>
@@ -76,6 +77,7 @@
                             <h3><%= product.name %></h3>
                             <p class = "product-description"><%= product.description %></p>
                             <a class = "details-button" href ="/products/<%= product.product_id %>">View Details</a>
+                            <button class="favorite-button" data-product-id="<%= product.product_id %>">Add to favorites</button>
                             <!--<a href="#">View Details</a>-->
                         </article>
                    <% }) %>
@@ -90,6 +92,39 @@
     <footer>
         <p>&copy; 2026 Oikodomos</p>
     </footer>
-    
+
+    <script>
+        document.querySelectorAll('.favorite-button').forEach(button => {
+            button.addEventListener('click', async () => {
+                const productId = button.dataset.productId;
+
+                try {
+                    const res = await fetch('/api/favorites/items', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ productId })
+                    });
+
+                    if (res.status === 401) {
+                        window.location.href = '/login';
+                        return;
+                    }
+
+                    const data = await res.json();
+
+                    if (data.success) {
+                        button.textContent = 'Added \u2713';
+                        button.disabled = true;
+                    } else {
+                        button.textContent = 'Could not add';
+                    }
+                } catch (err) {
+                    console.error('Error adding favorite:', err);
+                    button.textContent = 'Error';
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>

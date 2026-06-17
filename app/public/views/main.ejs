@@ -17,6 +17,7 @@
         <% if (locals.userId) { %>
         <li class="nav-user"><span>Hi, <%= locals.name %></span></li>
         <li><a href="/products#">Products</a></li>
+        <li><a href="/favorites">Favorites</a></li>
         <li class="nav-logout">
           <form method="POST" action="/logout" style="display:inline">
             <button type="submit">Logout</button>
@@ -26,6 +27,7 @@
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Register</a></li>
         <li><a href="/products#">Products</a></li>
+        <li><a href="/favorites">Favorites</a></li>
         <% } %>
         
       </ul>
