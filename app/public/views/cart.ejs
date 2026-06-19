@@ -30,8 +30,8 @@
                             <h3><%= item.name %></h3>
                             <p class = "product-description">Price: $<%= item.price %></p>
                             <p class = "product-description">Quantity: <%= item.quantity %></p>
-                            <button class="remove-button" data-product-id="<%= item.productId %>">Remove</button>
                             <a class = "details-button" href ="/products/<%= item.productId %>">View Details</a>
+                            <button class="remove-button" data-product-id="<%= item.productId %>">Remove</button>
                         </article>
                    <% }) %>
                    <% } else { %>

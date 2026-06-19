@@ -33,7 +33,7 @@ article {
     font-weight: bold;
 }
 
-.product-dec {
+.product-desc {
     margin: 0;
     color: #666;
 }
@@ -52,10 +52,24 @@ article {
 
 .product-link {
     padding: .5rem 1rem;
-    background: purple;
+    background: #337357;
     color: white;
     text-decoration: none;
     border-radius: 4px;
     text-align: center;
+}
+
+.cart-button {
+    border-radius: 4px;
+    padding: .7rem .7rem;
+    width: 100%;
+    color: white;
+    background-color: purple;
+    border: none;
+    font-weight: bold;
+}
+
+.cart-button {
+    cursor: pointer;
 }
 
