@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>Cart</title>
+    <link rel = "stylesheet" href="/styles/main.css">
+    <link rel = "stylesheet" href="/styles/products.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <h1><a href="/">Oikodomos</a></h1>
+            <ul>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/cart">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class = "products-page">
+        <section id = "products" class="grid-wrapper">
+            <div class = "cards">
+                <% if (typeof cart !== 'undefined' && cart.length > 0) { %>
+                    <% cart.forEach(item => { %>
+                        <article class = "product-card">
+                            <h3><%= item.name %></h3>
+                            <p class = "product-description">Price: $<%= item.price %></p>
+                            <p class = "product-description">Quantity: <%= item.quantity %></p>
+                            <button class="remove-button" data-product-id="<%= item.productId %>">Remove</button>
+                            <a class = "details-button" href ="/products/<%= item.productId %>">View Details</a>
+                        </article>
+                   <% }) %>
+                   <% } else { %>
+                        <p>Cart is empty</p>
+                  <%  } %>
+            </div>
+            <% if (typeof cart !== 'undefined' && cart.length > 0) { %>
+                <button id="clearCartBtn" class="clear-button">Clear Cart</button>
+            <% } %>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Oikodomos</p>
+    </footer>
+
+    <script src="/js/cart.js"></script>
+
+</body>
+</html>
