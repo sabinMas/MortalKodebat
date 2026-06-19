@@ -17,7 +17,7 @@ they can choose the platform that best suits their specific needs.
 The platform brings together extensions from multiple developer ecosystems, 
 including VS Code, JetBrains IDEs, Unreal Engine, Unity, web browsers, and 
 LLM-assisted development platforms. The purpose of this project is to demonstrate 
-a full-stack web application architecture using:
+a full-stack web application architecture.
 
 This project serves as a portfolio-ready example of structured, maintainable, 
 web application development.
@@ -48,8 +48,11 @@ web application development.
 
 ## Architecture
 
-This project follows the MVC (Model-View-Controller) design pattern and 
-uses server-side rendering (SSR) through Express and EJS templates.
+This project follows a layered MVC-inspired architecture. Routes 
+map incoming requests to controllers, controllers coordinate 
+application behavior through services, services interact with 
+repositories and models, and database access is centralized through 
+the MySQL connection layer.
 
 Key architectural components include:
 
@@ -70,9 +73,46 @@ Key architectural components include:
 - Docker Desktop
 - MySQL Workbench
 
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Environment Configuration
+
+Create a `.env` file in the project root by copying `.env.example`.
+
+macOS/Linux:
+```bash
+cp .env.example .env
+```
+
+Windows PowerShell:
+```powershell
+Copy-Item .env.example .env
+```
+
+Update the values as needed for your local environment.
+
 ### Database Setup
 
 1. Start the Docker containers.
-2. Connect to the local MySQL instance.
+
+```bash
+docker compose up -d
+```
+
+2. Connect to the local MySQL instance. Use localhost:3306 with the 
+credentials defined in your .env file.
 3. Run the provided schema script, located in app/db/schema.sql.
 4. Run the provided seed script, located in app/db/seed.sql.
+
+### Running the Application
+
+```bash
+npm run dev
+```
+
+The application will be available at the configured local address 
+and port.
