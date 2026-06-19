@@ -70,18 +70,24 @@ Key architectural components include:
 - Docker Desktop
 - MySQL Workbench
 
-## Install Dependencies
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-## Environment Configuration
+### Environment Configuration
 
 Create a `.env` file in the project root by copying `.env.example`.
 
+macOS/Linux:
 ```bash
 cp .env.example .env
+```
+
+Windows PowerShell:
+```powershell
+Copy-Item .env.example .env
 ```
 
 Update the values as needed for your local environment.
@@ -94,12 +100,16 @@ Update the values as needed for your local environment.
 docker compose up -d
 ```
 
-2. Connect to the local MySQL instance.
+2. Connect to the local MySQL instance. Use localhost:3306 with the 
+credentials defined in your .env file.
 3. Run the provided schema script, located in app/db/schema.sql.
 4. Run the provided seed script, located in app/db/seed.sql.
 
-## Running the Application
+### Running the Application
 
 ```bash
 npm run dev
 ```
+
+The application will be available at the configured local address 
+and port.
