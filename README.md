@@ -17,7 +17,7 @@ they can choose the platform that best suits their specific needs.
 The platform brings together extensions from multiple developer ecosystems, 
 including VS Code, JetBrains IDEs, Unreal Engine, Unity, web browsers, and 
 LLM-assisted development platforms. The purpose of this project is to demonstrate 
-a full-stack web application architecture using:
+a full-stack web application architecture.
 
 This project serves as a portfolio-ready example of structured, maintainable, 
 web application development.
@@ -70,9 +70,36 @@ Key architectural components include:
 - Docker Desktop
 - MySQL Workbench
 
+## Install Dependencies
+
+```bash
+npm install
+```
+
+## Environment Configuration
+
+Create a `.env` file in the project root by copying `.env.example`.
+
+```bash
+cp .env.example .env
+```
+
+Update the values as needed for your local environment.
+
 ### Database Setup
 
 1. Start the Docker containers.
+
+```bash
+docker compose up -d
+```
+
 2. Connect to the local MySQL instance.
 3. Run the provided schema script, located in app/db/schema.sql.
 4. Run the provided seed script, located in app/db/seed.sql.
+
+## Running the Application
+
+```bash
+npm run dev
+```
