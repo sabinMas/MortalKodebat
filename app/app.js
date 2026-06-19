@@ -2,7 +2,7 @@ import express from 'express';
 import session from 'express-session'
 import defaultRouter from './src/routers/default.routes.js';
 import authRouter from './src/routers/auth.routes.js';
-import favoriteRouter from './src/routers/favorites.routes.js';
+import cartRouter from './src/routers/cart.routes.js';
 
 //configure Express.js app
 const app = express();
@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 //routers
 app.use("/", defaultRouter);
 app.use("/", authRouter);
-app.use("/", favoriteRouter);
+app.use("/", cartRouter);
 
 //static directories
 app.use(express.static('app/public'));
