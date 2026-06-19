@@ -48,8 +48,11 @@ web application development.
 
 ## Architecture
 
-This project follows the MVC (Model-View-Controller) design pattern and 
-uses server-side rendering (SSR) through Express and EJS templates.
+This project follows a layered MVC-inspired architecture. Routes 
+map incoming requests to controllers, controllers coordinate 
+application behavior through services, services interact with 
+repositories and models, and database access is centralized through 
+the MySQL connection layer.
 
 Key architectural components include:
 
