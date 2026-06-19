@@ -118,3 +118,26 @@
     cursor: pointer;
 }
 
+.remove-button {
+    border-radius: 999px;
+    padding: .7rem .7rem;
+    width: 80%;
+    position: absolute;
+    bottom: 15px;
+    color: white;
+    background-color: purple;
+    border: none;
+    font-weight: bold;
+}
+
+.remove-button:hover {
+    cursor: pointer;
+}
+
+#clearCartBtn {
+    display: block;
+    margin: 2rem auto 0;
+    padding: .7rem .7rem;
+    border-radius: 999px;
+    background-color: #337357;
+}
