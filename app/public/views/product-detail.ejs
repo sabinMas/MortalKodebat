@@ -16,7 +16,7 @@
                 <li><a href="#login">Login</a></li>
                 <li><a href="#register">Register</a></li>
                 <li><a href="/products">Products</a></li>
-                <li><a href="/favorites">Favorites</a></li>
+                <li><a href="/cart">Cart</a></li>
             </ul>
         </nav>
     </header>
@@ -35,7 +35,7 @@
                             <p class="product-price"><%= product.price %></p>
                             <p class="product-desc"><%= product.description %></p>
                             <a href="<%= product.url %>" class="product-link"">Go to <%= product.name %></a>
-                            <button class="favorite-button" data-product-id="<%= product.product_id %>">Add to favorites</button>
+                            <button class="cart-button" data-product-id="<%= product.product_id %>">Add to cart</button>
                         </article>
 
                    <%  %>
@@ -52,38 +52,7 @@
         <p>&copy; 2026 Oikodomos</p>
     </footer>
 
-    <script>
-        document.querySelectorAll('.favorite-button').forEach(button => {
-            button.addEventListener('click', async () => {
-                const productId = button.dataset.productId;
-
-                try {
-                    const res = await fetch('/api/favorites/items', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ productId })
-                    });
-
-                    if (res.status === 401) {
-                        window.location.href = '/login';
-                        return;
-                    }
-
-                    const data = await res.json();
-
-                    if (data.success) {
-                        button.textContent = 'Added \u2713';
-                        button.disabled = true;
-                    } else {
-                        button.textContent = 'Could not add';
-                    }
-                } catch (err) {
-                    console.error('Error adding favorite:', err);
-                    button.textContent = 'Error';
-                }
-            });
-        });
-    </script>
+    <script src="/js/product.js"></script>
 
 </body>
 </html>
